@@ -6,6 +6,17 @@ public class Employee {
     double annualSalary;
     double estimatedAnnualMinusFurloughs;
 
+    //No-argument constructor
+    public Employee() {
+        this.lastName = "";
+        this.firstName = "";
+        this.jobTitle = "";
+        this.department = "";
+        this.annualSalary = 0.0;
+        this.estimatedAnnualMinusFurloughs = 0.0;
+    }
+
+    //Parameterized constructor
     public Employee(String lastName, String firstName, String jobTitle,
                     String department, double annualSalary, double estMinusFurloughs) {
         this.lastName = lastName;
@@ -37,23 +48,28 @@ public class Employee {
     }
 
     //Setters
-    public setLastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public setFirstName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    public setJobTitle(String jobTitle) {
+    public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
-    public setDepartment(String department) {
+    public void setDepartment(String department) {
         this.department = department;
     }
-    public setAnnualSalary(double annualSalary) {
+    public void setAnnualSalary(double annualSalary) {
         this.annualSalary = annualSalary;
     }
-    public setEstimatedAnnualMinusFurloughs(double estMinusFurloughs) {
+    public void setEstimatedAnnualMinusFurloughs(double estMinusFurloughs) {
         this.estimatedAnnualMinusFurloughs = estMinusFurloughs;
+    }
+
+    //equals() method to compare two Employee objects based on lastName, firstName, and department
+    public boolean equals(Object obj) {
+        if (this.lastName.equals(obj) &&
     }
 
     @Override

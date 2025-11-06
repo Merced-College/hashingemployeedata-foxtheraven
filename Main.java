@@ -1,3 +1,7 @@
+//Xandra Quevedo
+//11/6/25
+//Using Hash Tables Lab
+
 import java.io.*;
 import java.util.*;
 
@@ -72,9 +76,8 @@ public class Main {
         }
 
         // TODO: print total employees, duplicates found, and duplicate list
-        for (int i = 0; i < hash.length(); i++) {
-            
-        }
+        for (int)
+
 
     }
 
