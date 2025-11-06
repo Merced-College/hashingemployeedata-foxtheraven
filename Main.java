@@ -45,6 +45,7 @@ public class Main {
                 // otherwise insert into the hash table
 
                 //
+
                 if (table.get(key) != null) {
                     Employee existing = table.get(key);
                     if (existing.getDepartment().equals(emp.getDepartment())) {

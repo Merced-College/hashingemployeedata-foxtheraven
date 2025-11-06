@@ -68,8 +68,12 @@ public class Employee {
     }
 
     //equals() method to compare two Employee objects based on lastName, firstName, and department
-    public boolean equals(Object obj) {
-        if (this.lastName.equals(obj) &&
+    public boolean equals(Employee emp) {
+        if (this.firstName.equals(emp.getFirstName()) && this.lastName.equals(emp.getLastName())
+                && this.department.equals(emp.getDepartment())) {
+            return true;
+        }
+        return false;
     }
 
     @Override
