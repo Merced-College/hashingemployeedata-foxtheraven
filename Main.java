@@ -39,9 +39,19 @@ public class Main {
                 // TODO: use table.get(key) to see if an employee already exists
                 // if it exists, and it’s the same department, treat it as a duplicate
                 // otherwise insert into the hash table
+
+                //
                 if (table.get(key) != null) {
                     Employee existing = table.get(key);
-                    if(existing.get())
+                    if (existing.getDepartment().equals(emp.getDepartment())) {
+                        duplicates.add(emp);
+                        duplicatesFound++;
+                    } else {
+                        table.insert(key, emp);
+                    }
+                }
+                else {
+                    table.insert(key, emp);
                 }
 
                 // Example:
@@ -62,8 +72,9 @@ public class Main {
         }
 
         // TODO: print total employees, duplicates found, and duplicate list
-
-
+        for (int i = 0; i < hash.length(); i++) {
+            
+        }
 
     }
 
