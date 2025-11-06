@@ -8,10 +8,11 @@ public class Main {
 
         // TODO: make an ArrayList to store duplicate Employee objects
         // ArrayList<Employee> duplicates = ...
+        ArrayList<Employee> duplicates = new ArrayList<>();
 
         // TODO: make counters to keep track of total employees and duplicates
-        // int totalLoaded = 0;
-        // int duplicatesFound = 0;
+        int totalLoaded = 0;
+        int duplicatesFound = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader("Employee_data.csv"))) {
             String line = br.readLine(); // skip header
@@ -30,6 +31,7 @@ public class Main {
                 );
 
                 // TODO: increment your total counter
+                totalLoaded++;
 
                 // Create the hash key using last + first name
                 String key = (emp.lastName + emp.firstName).toLowerCase();
@@ -37,6 +39,10 @@ public class Main {
                 // TODO: use table.get(key) to see if an employee already exists
                 // if it exists, and it’s the same department, treat it as a duplicate
                 // otherwise insert into the hash table
+                if (table.get(key) != null) {
+                    Employee existing = table.get(key);
+                    if(existing.get())
+                }
 
                 // Example:
                 // Employee existing = table.get(key);
@@ -56,6 +62,9 @@ public class Main {
         }
 
         // TODO: print total employees, duplicates found, and duplicate list
+
+
+
     }
 
     // helper for cleaning up salary strings
