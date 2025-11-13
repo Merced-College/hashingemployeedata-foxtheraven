@@ -77,7 +77,10 @@ public class Main {
         }
 
         // TODO: print total employees, duplicates found, and duplicate list
-        for (int)
+        for (int i = 0; i < duplicates.size(); i++) {
+            System.out.println(duplicates.get(i).getLastName() + ", " + duplicates.get(i).getFirstName() +
+                    " - " + duplicates.get(i).getDepartment());
+        }
 
 
     }
