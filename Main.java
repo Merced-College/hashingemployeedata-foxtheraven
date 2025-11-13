@@ -7,17 +7,18 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // TODO: create your ChainingHashTable using zyBook code
+        //Create ChainingHashTable using zyBook code
         ChainingHashTable<String, Employee> table = new ChainingHashTable<>(11);
 
-        // TODO: make an ArrayList to store duplicate Employee objects
+        //Make an ArrayList to store duplicate Employee objects
         // ArrayList<Employee> duplicates = ...
         ArrayList<Employee> duplicates = new ArrayList<>();
 
-        // TODO: make counters to keep track of total employees and duplicates
+        //Make counters to keep track of total employees and duplicates
         int totalLoaded = 0;
         int duplicatesFound = 0;
 
+        
         try (BufferedReader br = new BufferedReader(new FileReader("Employee_data.csv"))) {
             String line = br.readLine(); // skip header
             while ((line = br.readLine()) != null) {
@@ -34,17 +35,15 @@ public class Main {
                         parseMoney(cols[5])
                 );
 
-                // TODO: increment your total counter
+                //Increment your total counter
                 totalLoaded++;
 
                 // Create the hash key using last + first name
                 String key = (emp.lastName + emp.firstName).toLowerCase();
 
-                // TODO: use table.get(key) to see if an employee already exists
+                // Use table.get(key) to see if an employee already exists
                 // if it exists, and it’s the same department, treat it as a duplicate
                 // otherwise insert into the hash table
-
-                //
 
                 if (table.get(key) != null) {
                     Employee existing = table.get(key);
@@ -76,7 +75,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        // TODO: print total employees, duplicates found, and duplicate list
+        // Print total employees, duplicates found, and duplicate list
         for (int i = 0; i < duplicates.size(); i++) {
             System.out.println(duplicates.get(i).getLastName() + ", " + duplicates.get(i).getFirstName() +
                     " - " + duplicates.get(i).getDepartment());
@@ -87,10 +86,14 @@ public class Main {
         System.out.println();
 
         //CRUD operations
+        //Make a new employee
         Employee newEmp = new Employee("QUEVEDO", "XANDRA", 
         "ILLUSTRATOR", "STUDENT", 500, 500);
+        //Make a new key for that employee (using the same logic from earlier code)
         String newKey = (newEmp.lastName + newEmp.firstName).toLowerCase();
+        //Insert the employee into the table using key and object
         table.insert(newKey, newEmp);
+        //Print 
         System.out.println("New employee: " + table.get(newKey));
 
         if (table.contains(newKey)) {
@@ -100,7 +103,6 @@ public class Main {
             System.out.println("Employee does not exist");
         }
 
-
         table.remove(newKey);
         System.out.println("After removing:");
         if (table.contains(newKey)) {
@@ -109,8 +111,6 @@ public class Main {
         else {
             System.out.println("Employee does not exist");
         }
-
-
 
     }
 

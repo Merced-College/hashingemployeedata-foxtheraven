@@ -1,3 +1,7 @@
+//Xandra Quevedo
+//11/6/25
+//ChainingHashTable.java - code from zyBook
+
 import java.io.PrintStream;
 
 public class ChainingHashTable<K, V> implements MapADT<K, V> {

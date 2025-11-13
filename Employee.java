@@ -1,3 +1,7 @@
+//Xandra Quevedo
+//11/6/25
+//Employee class
+
 public class Employee {
     String lastName;
     String firstName;
@@ -76,7 +80,11 @@ public class Employee {
         return false;
     }
 
-    //hashCode method 
+    //hashCode method - made for standardization, will not be used
+    //in our current implementation
+    public int hashCode() {
+        return (lastName + firstName).hashCode();
+    }
 
     @Override
     public String toString() {
