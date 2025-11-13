@@ -84,11 +84,32 @@ public class Main {
         System.out.println("Total employees loaded: " + totalLoaded);
         System.out.println("Total duplicates found: " + duplicatesFound);
 
+        System.out.println();
+
+        //CRUD operations
         Employee newEmp = new Employee("QUEVEDO", "XANDRA", 
         "ILLUSTRATOR", "STUDENT", 500, 500);
-        String key = (newEmp.lastName + newEmp.firstName).toLowerCase();
-        System.err.println(newEmp);
-        
+        String newKey = (newEmp.lastName + newEmp.firstName).toLowerCase();
+        table.insert(newKey, newEmp);
+        System.out.println("New employee: " + table.get(newKey));
+
+        if (table.contains(newKey)) {
+            System.out.println("Table contains " + table.get(newKey));
+        }
+        else {
+            System.out.println("Employee does not exist");
+        }
+
+
+        table.remove(newKey);
+        System.out.println("After removing:");
+        if (table.contains(newKey)) {
+            System.out.println("Contains " + table.get(newKey));
+        }
+        else {
+            System.out.println("Employee does not exist");
+        }
+
 
 
     }
