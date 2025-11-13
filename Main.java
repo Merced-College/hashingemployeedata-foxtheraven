@@ -81,6 +81,14 @@ public class Main {
             System.out.println(duplicates.get(i).getLastName() + ", " + duplicates.get(i).getFirstName() +
                     " - " + duplicates.get(i).getDepartment());
         }
+        System.out.println("Total employees loaded: " + totalLoaded);
+        System.out.println("Total duplicates found: " + duplicatesFound);
+
+        Employee newEmp = new Employee("QUEVEDO", "XANDRA", 
+        "ILLUSTRATOR", "STUDENT", 500, 500);
+        String key = (newEmp.lastName + newEmp.firstName).toLowerCase();
+        System.err.println(newEmp);
+        
 
 
     }

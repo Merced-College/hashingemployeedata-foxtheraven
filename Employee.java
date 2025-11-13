@@ -76,6 +76,8 @@ public class Employee {
         return false;
     }
 
+    //hashCode method 
+
     @Override
     public String toString() {
         return firstName + " " + lastName + " (" + department + ")";
