@@ -1,5 +1,5 @@
 //Xandra Quevedo
-//11/6/25
+//11/6/25 - 11/13/25
 //Using Hash Tables Lab
 
 import java.io.*;
@@ -18,7 +18,8 @@ public class Main {
         int totalLoaded = 0;
         int duplicatesFound = 0;
 
-        
+        //File reading statement - uses try catch for safety,
+        //in case the file does not exist
         try (BufferedReader br = new BufferedReader(new FileReader("Employee_data.csv"))) {
             String line = br.readLine(); // skip header
             while ((line = br.readLine()) != null) {
@@ -44,7 +45,6 @@ public class Main {
                 // Use table.get(key) to see if an employee already exists
                 // if it exists, and it’s the same department, treat it as a duplicate
                 // otherwise insert into the hash table
-
                 if (table.get(key) != null) {
                     Employee existing = table.get(key);
                     if (existing.getDepartment().equals(emp.getDepartment())) {
@@ -57,19 +57,6 @@ public class Main {
                 else {
                     table.insert(key, emp);
                 }
-
-                // Example:
-                // Employee existing = table.get(key);
-                // if (existing != null) {
-                //     if (existing.department.equalsIgnoreCase(emp.department)) {
-                //         duplicates.add(emp);
-                //         duplicatesFound++;
-                //     } else {
-                //         table.insert(key, emp);
-                //     }
-                // } else {
-                //     table.insert(key, emp);
-                // }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -96,6 +83,7 @@ public class Main {
         //Print 
         System.out.println("New employee: " + table.get(newKey));
 
+        //Search for new employee
         if (table.contains(newKey)) {
             System.out.println("Table contains " + table.get(newKey));
         }
@@ -103,6 +91,7 @@ public class Main {
             System.out.println("Employee does not exist");
         }
 
+        //Remove new employee
         table.remove(newKey);
         System.out.println("After removing:");
         if (table.contains(newKey)) {
